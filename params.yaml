@@ -1,6 +1,6 @@
 seed: 42
 split:
-  test_size: 0.25
+  test_size: 0.3
 train:
   model: random_forest
   n_estimators: 50
