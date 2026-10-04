@@ -10,12 +10,12 @@ import yaml
 from src.data import load_raw
 
 
-def main() -> None:
+def main(raw_path: str = "data/raw/winequality.csv") -> None:
     params = yaml.safe_load(Path("params.yaml").read_text(encoding="utf-8"))
     seed = params["seed"]
     test_size = params["split"]["test_size"]
 
-    df = load_raw()
+    df = load_raw(Path(raw_path))
     df = df.drop_duplicates().reset_index(drop=True)
 
     rng = df.sample(frac=1.0, random_state=seed).reset_index(drop=True)
@@ -31,4 +31,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else "data/raw/winequality.csv")

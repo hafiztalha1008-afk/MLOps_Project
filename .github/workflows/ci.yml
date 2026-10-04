@@ -29,9 +29,9 @@ jobs:
         run: pytest tests/ -v
 
       - name: Data checks
-        run: python src/data_checks.py
+        run: python src/data_checks.py data/raw/sample.csv
 
       - name: Smoke train
         run: |
-          python src/prepare.py
+          python src/prepare.py data/raw/sample.csv
           python src/train.py --smoke
