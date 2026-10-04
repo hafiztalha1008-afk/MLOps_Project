@@ -1,14 +1,15 @@
-﻿"""Data loading and cleaning utilities for the Wine Quality dataset."""
+"""Data loading and cleaning utilities for the Wine Quality dataset."""
+
 from pathlib import Path
 
 import pandas as pd
 
-RAW_PATH = Path("data/raw/winequality.csv")
+RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "winequality.csv"
 
 
 def load_raw(path: Path = RAW_PATH) -> pd.DataFrame:
     """Load the raw Wine Quality CSV."""
-    return pd.read_csv(path)
+    return pd.read_csv(path, sep=";")
 
 
 def drop_duplicates(df: pd.DataFrame) -> pd.DataFrame:
