@@ -1,0 +1,28 @@
+﻿# DVC-tracked data and models (contents ignored, pointers tracked)
+/data/*
+!/data/.gitignore
+!/data/**/
+!/data/**/.gitignore
+!/data/**/*.dvc
+
+/models/*
+!/models/.gitignore
+!/models/**/
+!/models/**/.gitignore
+!/models/**/*.dvc
+
+# Environment
+.env
+.venv/
+__pycache__/
+*.pyc
+
+# MLflow
+mlruns/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
