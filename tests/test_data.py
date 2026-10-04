@@ -1,4 +1,5 @@
-﻿"""Tests for src.data."""
+"""Tests for src.data."""
+
 import pandas as pd
 
 from src.data import drop_duplicates
