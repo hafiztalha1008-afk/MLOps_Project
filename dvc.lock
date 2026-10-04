@@ -44,12 +44,12 @@ stages:
         seed: 42
         train.max_depth: 10
         train.model: random_forest
-        train.n_estimators: 100
+        train.n_estimators: 50
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: e393b84f3cd94d4e53e09bda2bd57739
-      size: 3740409
+      md5: 7ea963b925b12b6f756b337c76b32272
+      size: 1858265
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -59,8 +59,8 @@ stages:
       size: 15958
     - path: models/model.pkl
       hash: md5
-      md5: e393b84f3cd94d4e53e09bda2bd57739
-      size: 3740409
+      md5: 7ea963b925b12b6f756b337c76b32272
+      size: 1858265
     - path: src/evaluate.py
       hash: md5
       md5: 81d26b37d122abee70e841c30ee7a4be
@@ -68,5 +68,5 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: eb5cebd6e0eddcf4a5fb37a2543365ef
+      md5: b4de000701e855b625d39e7dae6aeb76
       size: 121
